@@ -36,16 +36,21 @@ echo.
 echo 正在推送（首次推送会要求登录，密码处请填写 Personal Access Token）...
 git branch -M main
 git push -u origin main
+if errorlevel 1 (
+  echo.
+  echo [提示] 首次推送失败，尝试切换 TLS 后端后重试...
+  git -c http.sslBackend=openssl push -u origin main
+)
 
 if errorlevel 1 (
   echo.
   echo [失败] 推送未完成，请检查：
-  echo   1) 本机代理是否已启动（Git 配置使用 http://127.0.0.1:7890）
+  echo   1) 本机代理是否已启动（本仓库 Git 配置使用 http://127.0.0.1:7890）
   echo   2) GitHub 仓库地址是否正确
   echo   3) 登录是否使用 Personal Access Token
 ) else (
   echo.
-  echo [成功] 源码已推送到 GitHub。
+  echo [成功] 源码已推送到 GitHub，可打开 https://github.com/speedacs/opc 查看。
 )
 
 echo.
