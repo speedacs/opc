@@ -1,57 +1,42 @@
 @echo off
-chcp 65001 >nul
-setlocal
 cd /d "%~dp0"
 
+set "GIT=git"
+where git >nul 2>&1
+if errorlevel 1 set "GIT=F:\Git\cmd\git.exe"
+
 echo ============================================
-echo   OPC é£é™©ç­›æŸ¥ V3.7  æºç æ¨é€è„šæœ¬
-echo   ä½œè€…ï¼šç¾½ç»‡æ¢¦
+echo   OPC ·çÏÕÉ¸²é V3.7   Ô´ÂëÍÆËÍ
+echo   ×÷Õß£ºÓğÖ¯ÃÎ
 echo ============================================
 echo.
+echo   Ô¶³Ì²Ö¿â£ºhttps://github.com/speedacs/opc.git
+echo   ·ÖÖ§£ºmain
+echo.
+echo   Ê×´ÎÍÆËÍ»áµ¯³öµÇÂ¼´°¿Ú£º¿ÉÑ¡Ôñä¯ÀÀÆ÷µÇÂ¼ GitHub£¬
+echo   »ò°Ñ Personal Access Token Õ³Ìùµ½ÃÜÂë´¦¡£
+echo.
 
-git rev-parse --is-inside-work-tree >nul 2>&1
-if errorlevel 1 (
-  echo [é”™è¯¯] å½“å‰ç›®å½•ä¸æ˜¯ Git ä»“åº“ï¼Œè¯·ç¡®è®¤è„šæœ¬æ”¾åœ¨æºç åŒ…ç›®å½•ä¸‹ã€‚
-  pause
-  exit /b 1
-)
-
-git remote get-url origin >nul 2>&1
-if errorlevel 1 (
-  echo è¯·ç²˜è´´ GitHub ä»“åº“åœ°å€ï¼ˆå½¢å¦‚ https://github.com/ç”¨æˆ·å/ä»“åº“å.gitï¼‰ï¼š
-  set /p REPO_URL=
-  if "%REPO_URL%"=="" (
-    echo [å–æ¶ˆ] æœªå¡«å†™ä»“åº“åœ°å€ã€‚
-    pause
-    exit /b 1
-  )
-  git remote add origin "%REPO_URL%"
-  echo [å®Œæˆ] å·²æ·»åŠ è¿œç¨‹ä»“åº“ï¼š%REPO_URL%
-) else (
-  echo [æç¤º] å·²å­˜åœ¨è¿œç¨‹ä»“åº“ï¼š
-  git remote -v
-)
+"%GIT%" push -u origin main
+if not errorlevel 1 goto ok
 
 echo.
-echo æ­£åœ¨æ¨é€ï¼ˆé¦–æ¬¡æ¨é€ä¼šè¦æ±‚ç™»å½•ï¼Œå¯†ç å¤„è¯·å¡«å†™ Personal Access Tokenï¼‰...
-git branch -M main
-git push -u origin main
-if errorlevel 1 (
-  echo.
-  echo [æç¤º] é¦–æ¬¡æ¨é€å¤±è´¥ï¼Œå°è¯•åˆ‡æ¢ TLS åç«¯åé‡è¯•...
-  git -c http.sslBackend=openssl push -u origin main
-)
+echo   µÚÒ»´ÎÍÆËÍÎ´³É¹¦£¬³¢ÊÔÇĞ»» TLS ºó¶ËºóÖØÊÔ...
+"%GIT%" -c http.sslBackend=openssl push -u origin main
+if not errorlevel 1 goto ok
 
-if errorlevel 1 (
-  echo.
-  echo [å¤±è´¥] æ¨é€æœªå®Œæˆï¼Œè¯·æ£€æŸ¥ï¼š
-  echo   1) æœ¬æœºä»£ç†æ˜¯å¦å·²å¯åŠ¨ï¼ˆæœ¬ä»“åº“ Git é…ç½®ä½¿ç”¨ http://127.0.0.1:7890ï¼‰
-  echo   2) GitHub ä»“åº“åœ°å€æ˜¯å¦æ­£ç¡®
-  echo   3) ç™»å½•æ˜¯å¦ä½¿ç”¨ Personal Access Token
-) else (
-  echo.
-  echo [æˆåŠŸ] æºç å·²æ¨é€åˆ° GitHubï¼Œå¯æ‰“å¼€ https://github.com/speedacs/opc æŸ¥çœ‹ã€‚
-)
+echo.
+echo   [Ê§°Ü] ÍÆËÍÎ´Íê³É£¬ÇëÒÀ´Î¼ì²é£º
+echo     1) ´úÀíÊÇ·ñÒÑÆô¶¯£¨±¾²Ö¿âÊ¹ÓÃ 127.0.0.1:7890£©
+echo     2) GitHub µÇÂ¼ÊÇ·ñÍê³É
+echo     3) ÕËºÅ speedacs ÊÇ·ñÓĞ¸Ã²Ö¿âµÄĞ´ÈëÈ¨ÏŞ
+goto end
 
+:ok
+echo.
+echo   [³É¹¦] Ô´ÂëÒÑÍÆËÍµ½ https://github.com/speedacs/opc
+echo   ´ò¿ªÍøÒ³¼´¿É²é¿´È«²¿Ô´ÂëÎÄ¼ş¡£
+
+:end
 echo.
 pause
