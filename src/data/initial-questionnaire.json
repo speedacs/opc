@@ -1,0 +1,284 @@
+{
+  "meta": {
+    "title": "OPC 风险预备问卷",
+    "description": "问卷共 24 题，覆盖 2 大风险域、8 个风险类、24 项具体风险，用于初步识别个人/微型创业者在 AI 协同创业过程中的风险画像。",
+    "scale": {
+      "min": 1,
+      "max": 5,
+      "labels": {
+        "1": "完全不同意",
+        "2": "不同意",
+        "3": "中立",
+        "4": "同意",
+        "5": "完全同意"
+      }
+    },
+    "version": "3.0"
+  },
+  "author": "羽织梦",
+  "motto": "以梦化羽；所织皆梦，所梦皆羽",
+  "basicInfo": [
+    {
+      "id": "b1",
+      "text": "您的经营主体形式是？",
+      "options": ["未注册，个人经营", "个体工商户", "一人有限责任公司", "多人有限责任公司", "其他"]
+    },
+    {
+      "id": "b2",
+      "text": "企业（或业务）已经运营多久？",
+      "options": ["1 年以内", "1-3 年", "3-5 年", "5 年以上"]
+    },
+    {
+      "id": "b3",
+      "text": "您目前的年营收规模约是？",
+      "options": ["10 万以下", "10-50 万", "50-200 万", "200 万以上"]
+    },
+    {
+      "id": "b4",
+      "text": "您平均每周工作多少小时？",
+      "options": ["40 小时以内", "40-60 小时", "60-80 小时", "80 小时以上"]
+    },
+    {
+      "id": "b5",
+      "text": "您对 AI 工具的依赖程度？",
+      "options": ["偶尔使用", "经常使用", "核心环节依赖", "几乎全部依赖"]
+    },
+    {
+      "id": "b6",
+      "text": "您是否有稳定的支持网络（合伙人、外包伙伴、社群、家人支持等）？",
+      "options": ["完全没有", "较少", "有一些", "比较充足"]
+    }
+  ],
+  "categories": [
+    {
+      "id": "internal",
+      "name": "内源主体脆弱性风险",
+      "description": "源于创业者自身能力、健康、认知、资源与社会支持的风险",
+      "color": "#5B8FF9"
+    },
+    {
+      "id": "external",
+      "name": "外源环境与技术协同风险",
+      "description": "源于 AI 技术、平台生态与制度环境的协同风险",
+      "color": "#F6BD16"
+    }
+  ],
+  "questions": [
+    {
+      "id": "q1",
+      "text": "我对 AI 技术本身的掌握还不够，担心能力跟不上业务需求",
+      "categoryId": "internal",
+      "riskId": "1.1",
+      "riskName": "多维能力瓶颈风险",
+      "specificRiskId": "1.1.1",
+      "specificRiskName": "技术能力不足"
+    },
+    {
+      "id": "q2",
+      "text": "我使用 AI 工具时经常沟通不畅、用不到点上，担心协同效率低",
+      "categoryId": "internal",
+      "riskId": "1.1",
+      "riskName": "多维能力瓶颈风险",
+      "specificRiskId": "1.1.2",
+      "specificRiskName": "AI 协同能力滞后"
+    },
+    {
+      "id": "q3",
+      "text": "我擅长做产品或服务，但不擅长推广获客与商业变现",
+      "categoryId": "internal",
+      "riskId": "1.1",
+      "riskName": "多维能力瓶颈风险",
+      "specificRiskId": "1.1.3",
+      "specificRiskName": "管理与商业化能力缺失"
+    },
+    {
+      "id": "q4",
+      "text": "我对法律、财税等专业知识了解不足，担心经营中踩坑",
+      "categoryId": "internal",
+      "riskId": "1.1",
+      "riskName": "多维能力瓶颈风险",
+      "specificRiskId": "1.1.4",
+      "specificRiskName": "法律财税知识空白"
+    },
+    {
+      "id": "q5",
+      "text": "我的业务高度依赖我个人，很难标准化复制，担心规模做不大",
+      "categoryId": "internal",
+      "riskId": "1.1",
+      "riskName": "多维能力瓶颈风险",
+      "specificRiskId": "1.1.5",
+      "specificRiskName": "非标化规模壁垒"
+    },
+    {
+      "id": "q6",
+      "text": "我长期高强度工作，身体已经出现疲劳、肩颈不适等预警信号",
+      "categoryId": "internal",
+      "riskId": "1.2",
+      "riskName": "生理与精力脆弱风险",
+      "specificRiskId": "1.2.1",
+      "specificRiskName": "身体健康风险"
+    },
+    {
+      "id": "q7",
+      "text": "我经常感到精力透支、心力不足，很难持续保持状态",
+      "categoryId": "internal",
+      "riskId": "1.2",
+      "riskName": "生理与精力脆弱风险",
+      "specificRiskId": "1.2.2",
+      "specificRiskName": "精力与心力耗竭"
+    },
+    {
+      "id": "q8",
+      "text": "我很难兼顾创业与家庭角色，家人对我的工作方式不太理解",
+      "categoryId": "internal",
+      "riskId": "1.2",
+      "riskName": "生理与精力脆弱风险",
+      "specificRiskId": "1.2.3",
+      "specificRiskName": "角色冲突与孤立"
+    },
+    {
+      "id": "q9",
+      "text": "我觉得把产品做出来就等于成功，容易忽视市场、推广等后续环节",
+      "categoryId": "internal",
+      "riskId": "1.3",
+      "riskName": "认知与决策偏差风险",
+      "specificRiskId": "1.3.1",
+      "specificRiskName": "认知偏差陷阱"
+    },
+    {
+      "id": "q10",
+      "text": "我在投入项目时缺乏止损/止盈纪律，容易越陷越深",
+      "categoryId": "internal",
+      "riskId": "1.3",
+      "riskName": "认知与决策偏差风险",
+      "specificRiskId": "1.3.2",
+      "specificRiskName": "行为决策误区"
+    },
+    {
+      "id": "q11",
+      "text": "我的现金储备有限，现金流压力大，难以应对突发经营波动",
+      "categoryId": "internal",
+      "riskId": "1.4",
+      "riskName": "资源禀赋边界风险",
+      "specificRiskId": "1.4.1",
+      "specificRiskName": "资金储备与现金流风险"
+    },
+    {
+      "id": "q12",
+      "text": "我的行业人脉与可调动资源有限，感受到对一人公司的不公平对待",
+      "categoryId": "internal",
+      "riskId": "1.4",
+      "riskName": "资源禀赋边界风险",
+      "specificRiskId": "1.4.2",
+      "specificRiskName": "社会资本风险"
+    },
+    {
+      "id": "q13",
+      "text": "家人或朋友不太理解我的创业选择，我经常感到不被看见",
+      "categoryId": "internal",
+      "riskId": "1.5",
+      "riskName": "社会心理支持缺乏",
+      "specificRiskId": "1.5.1",
+      "specificRiskName": "社会认同缺失"
+    },
+    {
+      "id": "q14",
+      "text": "离开组织后我缺乏归属感，缺少可以依托的社群或身份认同",
+      "categoryId": "internal",
+      "riskId": "1.5",
+      "riskName": "社会心理支持缺乏",
+      "specificRiskId": "1.5.2",
+      "specificRiskName": "组织归属与身份认同"
+    },
+    {
+      "id": "q15",
+      "text": "我使用的 AI 工具偶尔出现幻觉或不准确，我担心影响业务",
+      "categoryId": "external",
+      "riskId": "2.1",
+      "riskName": "AI 协同双刃剑",
+      "specificRiskId": "2.1.1",
+      "specificRiskName": "AI 技术可靠性风险"
+    },
+    {
+      "id": "q16",
+      "text": "我有时把 AI 当成「许愿池」直接要方案，缺少目标拆解与验证",
+      "categoryId": "external",
+      "riskId": "2.1",
+      "riskName": "AI 协同双刃剑",
+      "specificRiskId": "2.1.2",
+      "specificRiskName": "AI 使用方式风险"
+    },
+    {
+      "id": "q17",
+      "text": "我的业务高度依赖某个平台，担心平台限流或规则变化",
+      "categoryId": "external",
+      "riskId": "2.2",
+      "riskName": "平台与生态不确定",
+      "specificRiskId": "2.2.1",
+      "specificRiskName": "平台依赖与规则风险"
+    },
+    {
+      "id": "q18",
+      "text": "我的外包或协作伙伴关系松散，担心对方突然跑路影响交付",
+      "categoryId": "external",
+      "riskId": "2.2",
+      "riskName": "平台与生态不确定",
+      "specificRiskId": "2.2.2",
+      "specificRiskName": "协作网络脆弱性"
+    },
+    {
+      "id": "q19",
+      "text": "我能获得的政策扶持与外部资源有限，担心外部环境变化",
+      "categoryId": "external",
+      "riskId": "2.2",
+      "riskName": "平台与生态不确定",
+      "specificRiskId": "2.2.3",
+      "specificRiskName": "外部环境不确定性"
+    },
+    {
+      "id": "q20",
+      "text": "我沿用传统经营方式，感觉与 AI 时代的节奏不匹配",
+      "categoryId": "external",
+      "riskId": "2.2",
+      "riskName": "平台与生态不确定",
+      "specificRiskId": "2.2.4",
+      "specificRiskName": "行业错配"
+    },
+    {
+      "id": "q21",
+      "text": "我是一人经营或一人公司，担心财产、责任边界不清带来风险",
+      "categoryId": "external",
+      "riskId": "2.3",
+      "riskName": "法律与制度空白风险",
+      "specificRiskId": "2.3.1",
+      "specificRiskName": "主体形式与法人风险"
+    },
+    {
+      "id": "q22",
+      "text": "我难以获得招投标等公共资源准入资格，制度对一人公司并不友好",
+      "categoryId": "external",
+      "riskId": "2.3",
+      "riskName": "法律与制度空白风险",
+      "specificRiskId": "2.3.2",
+      "specificRiskName": "制度空白与准入歧视"
+    },
+    {
+      "id": "q23",
+      "text": "我担心 AI 生成内容侵权或不合规，影响对外发布与商业使用",
+      "categoryId": "external",
+      "riskId": "2.3",
+      "riskName": "法律与制度空白风险",
+      "specificRiskId": "2.3.3",
+      "specificRiskName": "知识产权与内容合规"
+    },
+    {
+      "id": "q24",
+      "text": "我担心 AI 输出失误时责任归属不清，最终要自己承担损失",
+      "categoryId": "external",
+      "riskId": "2.3",
+      "riskName": "法律与制度空白风险",
+      "specificRiskId": "2.3.4",
+      "specificRiskName": "AI 输出责任归属"
+    }
+  ]
+}
